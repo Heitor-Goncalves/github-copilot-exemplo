@@ -1,0 +1,98 @@
+body {
+    background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Comic Sans MS', Comic Sans, cursive, sans-serif;
+}
+
+h1 {
+    color: #6c63ff;
+    font-family: 'Comic Sans MS', Comic Sans, cursive, sans-serif;
+    font-size: 3rem;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    text-align: center;
+    text-shadow: 2px 2px 8px #fff;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(9, 100px);
+    grid-template-rows: repeat(9, 100px);
+    gap: 10px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card.flipped {
+    background-color: #fff;
+    color: #4CAF50;
+    transform: scale(1.1);
+}
+
+.card.matched {
+    background-color: #FFD700;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+#gameCanvas {
+    display: block;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.15);
+    border-radius: 24px;
+    background: #f3f3f3;
+}
+
+#congrats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.85);
+    z-index: 1000;
+}
+
+#congrats h2 {
+    color: #6c63ff;
+    font-family: 'Comic Sans MS', Comic Sans, cursive, sans-serif;
+    font-size: 3rem;
+    margin-bottom: 32px;
+    text-align: center;
+    text-shadow: 2px 2px 8px #fff;
+}
+
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none;
+    z-index: 1001;
+    background: transparent;
+}
